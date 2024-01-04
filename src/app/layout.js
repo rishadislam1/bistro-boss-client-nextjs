@@ -1,8 +1,10 @@
-import { Inter } from 'next/font/google'
+
 import './globals.css'
 import { StoreProvider } from '@/redux/store/storeProvider'
+import Footer from '@/Components/Footer/Footer'
+import Header from '@/Components/Header/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata = {
   title: 'Bistro Boss',
@@ -13,7 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <StoreProvider>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Header/>
+      <body className={`max-w-screen-xl mx-auto`}>{children}</body>
+      <footer><Footer/></footer>
     </html>
     </StoreProvider>
   )
