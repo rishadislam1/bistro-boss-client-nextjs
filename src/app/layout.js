@@ -14,10 +14,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <StoreProvider>
-    <html lang="en">
-      <Header/>
-      <body className={`max-w-screen-xl mx-auto`}>{children}</body>
-      <footer><Footer/></footer>
+    <html lang="en" data-it-installed = "true">
+      
+      <body className={`max-w-screen-xl mx-auto`}>
+        <Header/>
+        {children}
+          <Footer/>
+        </body>
+  
     </html>
     </StoreProvider>
   )

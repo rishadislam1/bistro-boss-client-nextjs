@@ -1,13 +1,15 @@
-import Header from "@/Components/Home/Header/Header";
+import Bistro from "@/Components/Home/Bistro/Bistro";
+import HomeHeader from "@/Components/Home/Header/HomeHeader";
 import Order from "@/Components/Home/Order/Order";
 
 
 const HomePage = ()=> {
   return (
-  <div>
-  <Header/>
+  <>
+  <HomeHeader/>
   <Order/>
-  </div>
+  <Bistro/>
+  </>
   )
 }
 

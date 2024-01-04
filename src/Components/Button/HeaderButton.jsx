@@ -1,4 +1,4 @@
-
+"use client"
 const HeaderButton = ({subheader, header}) => {
     return (
         <div className="text-center flex flex-col justify-center items-center">

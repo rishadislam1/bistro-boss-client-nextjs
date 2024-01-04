@@ -34,12 +34,12 @@ const Order = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-            |<Image src={slide1} height={"100"} width={"200"} alt='slider image' />
+            <Image src={slide1} height="auto" width="auto" alt='slider image' />
         </SwiperSlide>
-        <SwiperSlide><Image src={slide2} height={"100"} width={"200"} alt='slider image' /></SwiperSlide>
-        <SwiperSlide><Image src={slide3} height={"100"} width={"200"} alt='slider image' /></SwiperSlide>
-        <SwiperSlide><Image src={slide4} height={"100"} width={"200"} alt='slider image' /></SwiperSlide>
-        <SwiperSlide><Image src={slide5} height={"100"} width={"200"} alt='slider image' /></SwiperSlide>
+        <SwiperSlide> <Image src={slide2} height="auto" width="auto" alt='slider image' /></SwiperSlide>
+        <SwiperSlide> <Image src={slide3} height="auto" width="auto" alt='slider image' /></SwiperSlide>
+        <SwiperSlide> <Image src={slide4} height="auto" width="auto" alt='slider image' /></SwiperSlide>
+        <SwiperSlide> <Image src={slide5} height="auto" width="auto" alt='slider image' /></SwiperSlide>
         
       </Swiper>
         </div>

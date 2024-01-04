@@ -9,32 +9,32 @@ import img5 from "@/assets/home/05.png";
 import img6 from "@/assets/home/06.png";
 import Image from "next/image";
 
-const Header = () => {
+const HomeHeader = () => {
   return (
  
       <Carousel showThumbs={false}>
         <div>
-          <Image src={img1} height={'100px'} width={'100'} alt="headerimage" />
+          <Image src={img1} alt="headerimage" width='500'  height='100px'  />
         </div>
 
         <div>
-          <Image src={img2} height={'100'} width={'100'} alt="headerimage" />
+          <Image src={img2} alt="headerimage" width='500'  height='100px'  />
         </div>
 
         <div>
-          <Image src={img3} height={'100'} width={'100'} alt="headerimage" />
+          <Image src={img3} alt="headerimage" width='500'  height='100px'  />
         </div>
 
         <div>
-          <Image src={img4} height={'100'} width={'100'} alt="headerimage" />
+          <Image src={img4} alt="headerimage" width='500'  height='100px'  />
         </div>
 
         <div>
-          <Image src={img5} height={'100'} width={'100'} alt="headerimage" />
+          <Image src={img5} alt="headerimage" width='500'  height='100px'  />
         </div>
 
         <div>
-          <Image src={img6} height={'100'} width={'100'} alt="headerimage" />
+          <Image src={img6} alt="headerimage" width='500'  height='100px'  />
         </div>
 
        
@@ -43,4 +43,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;
