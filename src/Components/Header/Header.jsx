@@ -1,28 +1,48 @@
-
+"use client"
 import Link from "next/link";
+import { CiShoppingCart } from "react-icons/ci";
+import "./header.css";
+import { usePathname } from "next/navigation";
+
 
 const Header = () => {
+  const pathName = usePathname();
   const navOption = (
     <>
       <li>
-        <a>Item 1</a>
+        <Link href='/' className={`${pathName=='/'&&'text-yellow-500'}`}>HOME</Link>
       </li>
+
       <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2 bg-black">
-            <li>
-              <a>Submenu 1</a>
-            </li>
-            <li>
-              <a>Submenu 2</a>
-            </li>
-          </ul>
-        </details>
+        <Link href='/dashboard' className={`${pathName=='/dashboard'&&'text-yellow-500'}`}>DASHBOARD</Link>
       </li>
+
       <li>
-        <a>Item 3</a>
+        <Link href='/menu' className={`${pathName=='/menu'&&'text-yellow-500'}`}>OUR MENU</Link>
       </li>
+
+      <li>
+        <Link href='/shop' className={`${pathName=='/shop'&&'text-yellow-500'}`}>OUR SHOP</Link>
+      </li>
+
+      <li>
+        <Link href='/contact' className={`${pathName=='/contact'&&'text-yellow-500'}`}>CONTACT US</Link>
+      </li>
+
+      <li className="text-xl">
+        <Link href='/cart' className={`${pathName=='/cart'&&'text-yellow-500'}`}><CiShoppingCart /></Link>
+      </li>
+
+      
+
+      <li>
+        <Link href='/login' className={`${pathName=='/login'&&'text-yellow-500'}`}>LOGIN</Link>
+      </li>
+
+      <li>
+        <Link href='/signup' className={`${pathName=='/signup'&&'text-yellow-500'}`}>SIGNUP</Link>
+      </li>
+      
     </>
   );
   return (
@@ -55,7 +75,7 @@ const Header = () => {
         <Link href='/' className="btn btn-ghost text-xl">Bistro BOSS</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="gap-5 menu-horizontal px-1">
             {navOption}
         </ul>
       </div>

@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <StoreProvider>
     <html lang="en" data-it-installed = "true">
       
-      <body className={`max-w-screen-xl mx-auto`}>
+      <body className={`lg:max-w-screen-xl lg:mx-auto`}>
         <Header/>
         {children}
           <Footer/>

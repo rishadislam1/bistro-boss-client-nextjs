@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="flex flex-wrap md:flex-nowrap justify-center items-center bg-gray-900">
+    <div className="mt-10 flex flex-wrap md:flex-nowrap justify-center items-center bg-gray-900">
       <div className="bg-gray-700 w-full text-white flex flex-col justify-end md:items-end items-center gap-3 p-10">
         <h1 className="text-3xl font-bold">Contact Us</h1>
         <p>Mirpur,10, Dhaka</p>
