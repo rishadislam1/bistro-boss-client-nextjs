@@ -11,14 +11,18 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
     "node-modules": "^1.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-google-recaptcha": "^3.1.0",
     "react-icons": "^4.12.0",
     "react-loader-spinner": "^6.1.6",
     "react-loading-skeleton": "^3.3.1",
     "react-redux": "^9.0.4",
     "react-responsive-carousel": "^3.2.23",
+    "react-simple-captcha": "^9.3.1",
+    "react-tabs": "^6.0.2",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

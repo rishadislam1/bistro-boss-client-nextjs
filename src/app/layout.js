@@ -1,8 +1,8 @@
 
+import Providers from '@/lib/Providers'
 import './globals.css'
-import { StoreProvider } from '@/redux/store/storeProvider'
-import Footer from '@/Components/Footer/Footer'
-import Header from '@/Components/Header/Header'
+import { getServerSession } from 'next-auth'
+import  SessionProvider  from '@/Components/SessionProvider/SessionProvider'
 
 
 
@@ -11,18 +11,19 @@ export const metadata = {
   description: 'Best Food Restaurant',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const session = await getServerSession();
   return (
-    <StoreProvider>
-    <html lang="en" data-it-installed = "true">
+
+    <Providers><html lang="en" data-it-installed = "true">
       
-      <body className={`lg:max-w-screen-xl lg:mx-auto`}>
-        <Header/>
-        {children}
-          <Footer/>
-        </body>
-  
-    </html>
-    </StoreProvider>
+    <body className={`lg:max-w-screen-xl lg:mx-auto`}>
+    <SessionProvider session={session}>
+      {children}
+      </SessionProvider>
+      </body>
+
+  </html></Providers>
+
   )
 }

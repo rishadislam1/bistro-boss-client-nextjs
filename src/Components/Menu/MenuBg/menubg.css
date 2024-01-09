@@ -1,0 +1,58 @@
+.menuHeaderBg{
+    background-image: url(../../../assets//menu/banner3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    
+}
+
+.desert{
+    background-image: url(../../../assets//menu/dessert-bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.pizza{
+    background-image: url(../../../assets//menu/pizza-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+
+}
+
+.salad{
+    background-image: url(../../../assets//menu/salad-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.soup{
+    background-image: url(../../../assets//menu/soup-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.contact{
+    background-image: url(../../../assets/contact/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.shop{
+    background-image: url(../../../assets/shop//banner2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}

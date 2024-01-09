@@ -6,9 +6,9 @@ import img from "@/assets/home/featured.jpg";
 const FromMenu = () => {
   return (
     <>
-      <div className="mt-10  lg:p-54 md:p-24 bg-black bg-opacity-45 menubg">
+      <div className="mt-10  lg:p-54 md:p-24 menubg">
       {/* <div className="z-0 absolute top-0 left-0 bottom-0 right-0 bg-black w-full bg-opacity-60"></div> */}
-        <div className="z-50 bg-black bg-opacity-60 rounded-xl shadow-lg shadow-gray-900">
+        <div className=" bg-black bg-opacity-60 rounded-xl shadow-lg shadow-gray-900">
           <div className="text-white">
             <HeaderButton   
               subheader={"Check It Out"}
