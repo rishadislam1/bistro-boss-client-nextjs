@@ -10,8 +10,15 @@ export const shopApi = apiSlice.injectEndpoints({
         }),
         getMenuCard: builder.query({
             query: ()=>`/menucard`
+        }),
+        addMenu: builder.mutation({
+            query: (data)=>({
+                url: '/menu',
+                method: 'POST',
+                body: data
+            })
         })
     })
 })
 
-export const {useGetShopQuery, useGetRandomQuery, useGetMenuCardQuery} = shopApi;
+export const {useGetShopQuery, useGetRandomQuery, useGetMenuCardQuery, useAddMenuMutation} = shopApi;

@@ -17,7 +17,7 @@ export default async function RootLayout({ children }) {
 
     <Providers><html lang="en" data-it-installed = "true">
       
-    <body className={`lg:max-w-screen-xl lg:mx-auto`}>
+    <body >
     <SessionProvider session={session}>
       {children}
       </SessionProvider>

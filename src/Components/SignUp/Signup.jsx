@@ -4,16 +4,29 @@ import "./signup.css";
 import img from "@/assets/others/authentication1.png";
 import Link from "next/link";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-
+import {
+  useJwtMutation,
+  useRegisterMutation,
+} from "@/redux/features/auth/authApi";
 
 const SignUp = () => {
-  
+  const [register, {data:registrationData}] = useRegisterMutation();
 
-
-
-  const handleFormSubmit = (e)=>{
-     e.preventDefault();
-  }
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const data = {
+      name: name,
+      email: email,
+      password: password,
+    };
+   
+    register(data);
+ 
+  };
   return (
     <div className="loginBg lg:p-44 md:p-24">
       <div className="loginBg shadow-lg shadow-black ">
@@ -24,13 +37,13 @@ const SignUp = () => {
           <div className="flex flex-col justify-center items-center w-full">
             <h1 className="text-2xl font-bold">SIGNUP</h1>
             <form className="w-full" onSubmit={handleFormSubmit}>
-            <div className="w-full mt-4">
+              <div className="w-full mt-4">
                 <div className="flex flex-col w-full">
                   <label>Name*</label>
                   <input
                     type="text"
                     name="name"
-                    id="email"
+                    id="name"
                     className="px-2 bg-white border border-gray-200 rounded py-2 mt-2"
                     placeholder="Enter Your Name"
                     required
@@ -65,16 +78,12 @@ const SignUp = () => {
                   />
                 </div>
               </div>
-            
-              
+
               <input
                 type="submit"
                 className={`w-full my-10 py-2  rounded-xl text-white font-bold  bg-blue-500 cursor-pointer`}
-             
-                value={'SignUp'}
+                value={"SignUp"}
               />
-                
-          
             </form>
             <p>
               Already Have An Account?{" "}

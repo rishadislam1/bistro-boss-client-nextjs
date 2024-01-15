@@ -7,19 +7,23 @@ import { FaGoogle } from "react-icons/fa6";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
-  
   validateCaptcha,
 } from "react-simple-captcha";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useSelector } from "react-redux";
 import { pageTrack } from "@/redux/features/pages/pagesSlice";
+import { useLoginMutation } from "@/redux/features/auth/authApi";
+import { redirect } from "next/navigation";
 
 const Login = () => {
   const captchaRef = useRef(null);
   const [btnValid, setBtnValid] = useState(false);
+  const [login, { data: loginData }] = useLoginMutation();
+  const { pageName } = useSelector((state) => state.page);
+  const {data:session} = useSession();
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -37,11 +41,35 @@ const Login = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const data = {
+      email: email,
+      password: password,
+    };
+    login(data);
   };
 
- const {pageName} = useSelector((state)=> state.page)
- console.log(pageName)
- 
+  if(loginData){
+    return redirect('/user/profile');
+  }
+  const handleGoogle = () => {
+    signIn("google", {
+      callbackUrl: `${
+        pageName ? pageName : "http://localhost:3000/loginHandle"
+      }`,
+    });
+  };
+
+  const handleGithub = () => {
+    signIn("github", {
+      callbackUrl: `${
+        pageName ? pageName : "http://localhost:3000/loginHandle"
+      }`,
+    });
+  };
+
   return (
     <div className="loginBg lg:p-44 md:p-24">
       <div className="loginBg shadow-lg shadow-black ">
@@ -119,10 +147,16 @@ const Login = () => {
             </p>
             <p className="mt-5">Or SignIn With</p>
             <div className="my-10 flex justify-center items-center gap-5 text-xl">
-              <button onClick={()=>{signIn('google',{callbackUrl:`${pageName?pageName:'http://localhost:3000/user/profile'}`})}} className="border p-2 border-red-500 rounded-full hover:text-white hover:bg-red-500 cursor-pointer transition-all duration-700">
+              <button
+                onClick={handleGoogle}
+                className="border p-2 border-red-500 rounded-full hover:text-white hover:bg-red-500 cursor-pointer transition-all duration-700"
+              >
                 <FaGoogle />{" "}
               </button>
-              <button onClick={()=>{signIn('github')}} className="border p-2 border-blue-500 rounded-full hover:text-white hover:bg-blue-500 cursor-pointer transition-all duration-700">
+              <button
+                onClick={handleGithub}
+                className="border p-2 border-blue-500 rounded-full hover:text-white hover:bg-blue-500 cursor-pointer transition-all duration-700"
+              >
                 <FaGithub />
               </button>
             </div>

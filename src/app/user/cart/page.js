@@ -1,17 +1,10 @@
-
+import Cart from '@/Components/User/Cart/Cart';
 import React from 'react';
 
-export const metadata = {
-    title: 'Bistro Boss | Cart Page',
-    description: 'Best Food Restaurant',
-}
-
 const CartPage = () => {
-
- 
     return (
         <div>
-            
+            <Cart/>
         </div>
     );
 };
